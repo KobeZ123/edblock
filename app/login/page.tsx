@@ -30,6 +30,7 @@ const Login = () => {
 
   const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value);
+    console.log(e.target.value)
   };
 
   const handlePasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -48,12 +49,22 @@ const Login = () => {
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setTriedToSubmit(true);
-    if (isPasswordValid(password) && isEmailValid(email) && isPhoneNumberValid(phoneNumber.toString())) {
+    if (isExistingUser) {
+        if (isPasswordValid(password) && isEmailValid(email) && isPhoneNumberValid(phoneNumber.toString())) {
 
-           // TODO: LOGIN LOGIC Add your login logic here
-        router.push('/dashboard');
-        console.log('Login clicked with email:', email, 'and password:', password);
+            // TODO: LOGIN LOGIC Add your login logic here
+         router.push('/dashboard');
+         console.log('Login clicked with email:', email, 'and password:', password);
+     }
+    } else {
+        if (isPasswordValid(password) && isEmailValid(email)) {
+
+            // TODO: LOGIN LOGIC Add your login logic here
+         router.push('/dashboard');
+         console.log('Login clicked with email:', email, 'and password:', password);
+     }
     }
+    
  
   };
 

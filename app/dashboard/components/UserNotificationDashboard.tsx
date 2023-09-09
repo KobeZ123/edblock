@@ -21,7 +21,7 @@ export default function UserNotificationDashboard ({ userName, assignments }: Us
           <div className="rounded-full p-1">
             <img src="/icons/setting.png" alt="Settings" 
                 style={{ maxWidth: '24px', maxHeight: '24px'}}
-                className="hover:bg-gray-400"
+                className={"hover:bg-gray-400 rounded-full" + (showSettings ? " bg-gray-400" : "")}
                 onMouseDown={(e) => {
                   e.stopPropagation(); // Prevent parent link from navigating
                   toggleOptions();

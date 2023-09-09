@@ -13,9 +13,9 @@ export default function Home() {
           <Link href="/learn-more" className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-lg flex-1 max-w-xs text-center">
             <p>Learn More</p>
           </Link>
-          <Link href="/dashboard"
+          <Link href="/login"
           className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-lg flex-1 max-w-xs text-center">
-            <p>Go To Dashboard</p>
+            <p>Get Started</p>
           </Link>
         </div>
 
