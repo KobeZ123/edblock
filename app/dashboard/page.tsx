@@ -76,8 +76,8 @@ export default function Dashboard() {
             onClick={() => setIsModalOpen(true)}>
             <p>Add Classroom</p>
             <img src="/icons/plus.png" alt="Add" 
-                        style={{ maxWidth: '20px', maxHeight: '20px'}}
-                        className="ml-2"/>
+              style={{ maxWidth: '20px', maxHeight: '20px'}}
+              className="ml-2"/>
             
           </button>
         </div>
@@ -87,6 +87,7 @@ export default function Dashboard() {
             EXAMPLE_CLASSES.map( (classroom: Classroom) => 
               (<ClassroomCard
                 classroom={classroom}
+                key={classroom.name}
               />)
             )
           }

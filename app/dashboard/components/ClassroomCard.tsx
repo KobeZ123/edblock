@@ -42,11 +42,10 @@ export default function ClassroomCard ({classroom}: {classroom: Classroom}) {
             <div className="bg-gray-100 p-2 group hover:bg-red-800 hover:cursor-pointer" 
               style={{
                 position: 'absolute',
-                top: '50%', // Position below the card
+                top: '50%', 
                 right: 0,
-                zIndex: 1, // Ensure it's above other content
+                zIndex: 1, 
               }}>
-            {/* Your options content goes here */}
             <ul>
               <li onClick={() => console.log("TODO: REMOVE USER FROM CLASS")}>
                 <p className="text-red-800 font-semibold group-hover:text-white">Leave</p>
