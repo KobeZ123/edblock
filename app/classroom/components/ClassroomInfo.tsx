@@ -1,16 +1,15 @@
 "use client"
 
+import { displayName } from "@/utils/functions";
+import { Classroom } from "@/utils/types";
 import React, { useEffect, useState } from "react";
 
 interface ClassroomInfoProps {
     styles: string
-    name: string;
-    professorName: string;
-    description: string;
-    classroomCode: string;
+    classroomInfo: Classroom
 }
 
-const ClassroomInfo = ({ styles, name, professorName, description, classroomCode }: ClassroomInfoProps) => {
+const ClassroomInfo = ({ styles, classroomInfo }: ClassroomInfoProps) => {
 
   const [isClassroomCodeVisible, setIsClassroomCodeVisible] = useState(false);
 
@@ -26,20 +25,20 @@ const ClassroomInfo = ({ styles, name, professorName, description, classroomCode
   return (
     <div className={`bg-white shadow-md rounded-lg p-4 ${styles}`}>
         <div className="flex justify-between items-center">
-            <div>
-                <h1>{name}</h1>
-                <h3 className="text-gray-600">{professorName}</h3>
-                <p className="text-gray-600">{description}</p>
+            <div className="flex flex-col gap-2">
+                <h1>{classroomInfo.name}</h1>
+                <h3 className="text-gray-600">{displayName(classroomInfo.teacher) }</h3>
+                <p>{classroomInfo.description}</p>
             </div>
 
-            <div onClick={toggleDisplayClassroomCode} className="ml-auto hover:bg-gray-300 hover:cursor-pointer rounded-full">
+            <div onClick={toggleDisplayClassroomCode} className="mx-2 hover:bg-gray-300 hover:cursor-pointer rounded-full">
                 <img src="/icons/information.png" alt="Classroom information" 
                     style={{ maxWidth: '32px', maxHeight: '32px' }}/>
             </div>
         </div>
         {isClassroomCodeVisible && (
             <div className="mt-4">
-            <p>Classroom Code: {classroomCode}</p>
+            <p><b>Classroom Code:</b> {classroomInfo.classroomCode}</p>
             </div>
         )}
     </div>

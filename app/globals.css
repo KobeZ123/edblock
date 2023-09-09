@@ -62,10 +62,10 @@
     @apply text-2xl  font-[Nunito+Sans] font-semibold;
   }
   h4 {
-    @apply text-xl  font-[Nunito+Sans]
+    @apply text-xl  font-[Nunito+Sans] font-semibold
   }
   p {
-    @apply text-lg  font-[Domine]
+    @apply text-lg  font-[Lilita+One]
   } 
   }
 }

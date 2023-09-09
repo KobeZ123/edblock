@@ -7,15 +7,20 @@ import PostsList from './components/PostsList';
 import Link from 'next/link';
 import PeoplesList from './components/PeoplesList';
 import ClassroomPostForm from './components/ClassroomPostForm';
+import { EXAMPLE_CLASSROOM_1 } from '@/utils/types';
+import { useParams } from 'next/navigation';
 
 const Classroom = () => {
-  // Sample classroom data
-  const classroomInfo = {
-    name: 'Mathematics Class',
-    professorName: 'The Cool Professor',
-    description: 'Learn mathematics with interactive lessons.',
-    classroomCode: 'ABCXYZ',
-  };
+  const { classroomCode } = useParams();
+  const [classroom, setClassroom] = useState(null);
+
+  {/* gets the classroom from the classroom code */}
+
+  // useEffect(() => {
+    
+
+  //   {/* TODO: validate if current user is part of classroom */}
+  // }, [])
 
   // Sample assignments data
   const posts = [
@@ -41,6 +46,7 @@ const Classroom = () => {
 
   return (
     <div className="bg-gray-100 min-h-screen p-4 flex flex-col items-center">
+      <h1>Classroom Code: {classroomCode}</h1>
         <div className="max-w-4xl w-[80%]">
 
             {/* back to dashboard */ }
@@ -50,7 +56,7 @@ const Classroom = () => {
                 <p className="mx-4 group-hover:bg-gray-400">Back to Dashboard</p>
             </Link>
             
-            <ClassroomInfo {...classroomInfo} styles="mb-4" />
+            <ClassroomInfo classroomInfo={EXAMPLE_CLASSROOM_1} styles="mb-4" />
 
             <ClassroomPostForm />
 
