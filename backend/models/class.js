@@ -3,7 +3,10 @@ const { Schema, model } = mongoose;
 
 const classSchema = new Schema({
   title: String,
-  description: String
+  description: String,
+  classCode: String,
+  professor: String,
+  posts: [String]
 });
 
 const Class = model('Class', classSchema);
