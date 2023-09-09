@@ -11,7 +11,7 @@ const config: Config = {
     extend: {
       fontFamily: {
         primary: ["var(--inter-font)", "sans-serif"],
-        secondary: ["var(--domine-font)", "serif"]
+        secondary: ["var(--lilita-font)", "sans-serif"]
       },
       colors: {
         // Light mode colors

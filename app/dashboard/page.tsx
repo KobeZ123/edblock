@@ -1,3 +1,4 @@
+import { Classroom, EXAMPLE_CLASSES } from "@/utils/types";
 import ClassroomCard from "./components/ClassroomCard";
 import UserNotificationDashboard from "./components/UserNotificationDashboard";
 
@@ -10,17 +11,13 @@ export default function Dashboard() {
         {/* User's classrooms */}
         <h1 className="text-3xl font-semibold mb-4">My Classrooms</h1>
         <div className="flex flex-wrap justify-center">
-          <ClassroomCard
-            name="Mathematics"
-            professorName="Professor Mathematics"
-            imageSrc="/math-classroom.jpg"
-          />
-          <ClassroomCard
-            name="Science"
-            professorName="Professor Biology"
-            imageSrc="/science-classroom.jpg"
-          />
-          {/* Add more ClassroomCard components for other classes */}
+          {
+            EXAMPLE_CLASSES.map( (classroom: Classroom) => 
+              (<ClassroomCard
+                classroom={classroom}
+              />)
+            )
+          }
       </div>
 
       </div>

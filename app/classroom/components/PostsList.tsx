@@ -2,7 +2,6 @@
 
 import Attachment from "@/app/components/Attachment";
 import { COLOR_PALETTE } from "@/utils/constants";
-import Link from "next/link";
 import { useRouter } from 'next/navigation'
 
 const PostPreview = ({post}: {post: any}) => {
