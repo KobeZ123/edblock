@@ -1,7 +1,20 @@
 const PersonCard = ({name} : { name: string }) => {
     return (
-        <div className="rounded-lg shadow-md bg-white px-8 py-4">
+        <div className="flex flex-row justify-between items-center rounded-lg shadow-md bg-white px-8 py-4">
             <p>{name}</p>
+            <div className="flex flex-row gap-4">
+                <span className="hover:bg-gray-400 rounded-full p-1">
+                    <img src="/icons/call.png" alt="Call" 
+                        style={{ maxWidth: '32px', maxHeight: '32px'}}
+                        />
+                </span>
+                
+                <span className="hover:bg-gray-400 rounded-full p-1">
+                    <img src="/icons/mail.png" alt="Call" 
+                        style={{ maxWidth: '32px', maxHeight: '32px'}}/>
+                </span>
+                
+            </div>
         </div>
     )
 }
